@@ -1,18 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
-#include "MenuScreen.h"
-#include "GameScreen.h"
-
-struct Game {
-	sf::RenderWindow window;
-	MenuScreen menuScreen;
-	GameScreen gameScreen;
-};
+#include "Game.h"
 
 int main(int argc, char *argv[]) {
-	std::unique_ptr<Game> game(new Game);
-	game->window.create(sf::VideoMode(800, 600), "SFML Game");
-	std::unique_ptr<Screen> screen(&game->menuScreen);
+	std::unique_ptr<Game> game(new Game(800, 600, "SFML Game"));
+	Screen *screen = nullptr;
+
+	screen = &game->menuScreen;
 
 	while (game->window.isOpen()) {
 		sf::Event event;
@@ -26,6 +20,7 @@ int main(int argc, char *argv[]) {
 		}
 
 		game->window.clear();
+		screen->render();
 		game->window.display();
 	}
 
