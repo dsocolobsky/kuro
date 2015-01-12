@@ -8,7 +8,7 @@ void MenuScreen::init() {
 
 }
 
-void MenuScreen::update() {
+void MenuScreen::update(sf::Event event) {
 
 }
 

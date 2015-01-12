@@ -7,7 +7,7 @@ public:
 	MenuScreen();
 
 	void init();
-	void update();
+	void update(sf::Event event);
 	void render();
 
 	~MenuScreen();

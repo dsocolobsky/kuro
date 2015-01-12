@@ -7,7 +7,7 @@ public:
 	GameScreen();
 
 	void init();
-	void update();
+	void update(sf::Event event);
 	void render();
 	
 	~GameScreen();

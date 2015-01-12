@@ -8,7 +8,7 @@ void GameScreen::init() {
 
 }
 
-void GameScreen::update() {
+void GameScreen::update(sf::Event event) {
 
 }
 
