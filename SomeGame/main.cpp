@@ -12,7 +12,7 @@ struct Game {
 int main(int argc, char *argv[]) {
 	std::unique_ptr<Game> game(new Game);
 	game->window.create(sf::VideoMode(800, 600), "SFML Game");
-	std::unique_ptr<Screen> screen(&game->gameScreen);
+	std::unique_ptr<Screen> screen(&game->menuScreen);
 
 	while (game->window.isOpen()) {
 		sf::Event event;
