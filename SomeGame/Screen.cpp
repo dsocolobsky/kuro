@@ -1,6 +1,6 @@
 #include "Screen.h"
 
-Screen::Screen() {
+Screen::Screen(std::shared_ptr<Game> game) {
 }
 
 Screen::~Screen() {

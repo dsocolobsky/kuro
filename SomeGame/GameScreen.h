@@ -4,11 +4,11 @@
 class GameScreen : public Screen
 {
 public:
-	GameScreen();
+	GameScreen(std::shared_ptr<Game> game);
 
 	void init();
 	void update(sf::Event event);
-	void render();
+	void render(sf::RenderWindow &window);
 	
 	~GameScreen();
 };

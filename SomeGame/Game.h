@@ -12,8 +12,9 @@ public:
 	void run();
 
 	~Game();
-public:
+private:
 	sf::RenderWindow window;
+	Screen     *screen;
 	MenuScreen menuScreen;
 	GameScreen gameScreen;
 };

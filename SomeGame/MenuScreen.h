@@ -4,11 +4,11 @@
 class MenuScreen : public Screen
 {
 public:
-	MenuScreen();
+	MenuScreen(std::shared_ptr<Game> game);
 
 	void init();
 	void update(sf::Event event);
-	void render();
+	void render(sf::RenderWindow &window);
 
 	~MenuScreen();
 };
