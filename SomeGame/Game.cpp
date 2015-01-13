@@ -1,9 +1,9 @@
 #include "Game.h"
 
 Game::Game(int width, int height, std::string title) : window(sf::VideoMode(width, height), title),
-menuScreen(std::make_shared<Game>(this)), gameScreen(std::make_shared<Game>(this))
+gameScreen(std::unique_ptr<GameScreen>(new GameScreen())), menuScreen(std::unique_ptr<MenuScreen>(new MenuScreen()))
 {
-	
+	screen = menuScreen.get();
 }
 
 void Game::run() {

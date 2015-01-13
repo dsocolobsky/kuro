@@ -13,9 +13,9 @@ public:
 
 	~Game();
 private:
-	sf::RenderWindow window;
-	Screen     *screen;
-	MenuScreen menuScreen;
-	GameScreen gameScreen;
+	sf::RenderWindow            window;
+	Screen                      *screen;
+	std::unique_ptr<MenuScreen> menuScreen;
+	std::unique_ptr<GameScreen> gameScreen;
 };
 

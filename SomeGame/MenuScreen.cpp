@@ -1,10 +1,6 @@
 #include "MenuScreen.h"
 
-MenuScreen::MenuScreen(std::shared_ptr<Game> game) {
-}
-
 void MenuScreen::init() {
-
 }
 
 void MenuScreen::update(sf::Event event) {

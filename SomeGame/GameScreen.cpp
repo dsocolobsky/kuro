@@ -1,11 +1,6 @@
 #include "GameScreen.h"
 
-
-GameScreen::GameScreen(std::shared_ptr<Game> game) {
-}
-
 void GameScreen::init() {
-
 }
 
 void GameScreen::update(sf::Event event) {

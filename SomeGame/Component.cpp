@@ -1,6 +1,6 @@
 #include "Component.h"
 
-Component::Component(std::unique_ptr<Entity> parent) {
+Component::Component(std::shared_ptr<Entity> parent) {
 	this->parent = std::move(parent);
 }
 
