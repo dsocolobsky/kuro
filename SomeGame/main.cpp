@@ -3,7 +3,7 @@
 #include "Game.h"
 
 int main(int argc, char *argv[]) {
-	std::shared_ptr<Game> game(new Game(800, 600, "SFML Game"));
+	auto game = std::make_unique<Game>(800, 600, "SFML Game");
 
 	game->run();
 

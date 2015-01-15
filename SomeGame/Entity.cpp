@@ -31,6 +31,3 @@ float Entity::getWidth() {
 float Entity::getHeight() {
 	return height;
 }
-
-Entity::~Entity() {
-}

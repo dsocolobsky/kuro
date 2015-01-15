@@ -4,10 +4,9 @@
 class MenuScreen : public Screen
 {
 public:
-	void init();
-	void update(sf::Event event);
-	void render(sf::RenderWindow &window);
+	MenuScreen(ScreenManager &scrManager);
 
-	~MenuScreen();
+	void update(sf::Event &event);
+	void render(sf::RenderWindow &window);
 };
 

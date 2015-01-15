@@ -15,8 +15,6 @@ public:
 	void  setHeight(float height);
 	float getWidth();
 	float getHeight();
-
-	virtual ~Entity();
 private:
 	sf::Vector2f position;
 	float width  = 0;

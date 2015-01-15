@@ -1,8 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "MenuScreen.h"
-#include "GameScreen.h"
+#include <map>
+#include "ScreenManager.h"
 
 class Game
 {
@@ -10,12 +10,9 @@ public:
 	Game(int width, int height, std::string title);
 
 	void run();
-
-	~Game();
+	void setScreen(std::string id);
 private:
-	sf::RenderWindow            window;
-	Screen                      *screen;
-	std::unique_ptr<MenuScreen> menuScreen;
-	std::unique_ptr<GameScreen> gameScreen;
+	sf::RenderWindow window;
+	ScreenManager screenManager;
 };
 

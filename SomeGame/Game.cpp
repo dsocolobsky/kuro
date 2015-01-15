@@ -1,9 +1,9 @@
 #include "Game.h"
+#include "MenuScreen.h"
 
-Game::Game(int width, int height, std::string title) : window(sf::VideoMode(width, height), title),
-gameScreen(std::unique_ptr<GameScreen>(new GameScreen())), menuScreen(std::unique_ptr<MenuScreen>(new MenuScreen()))
+Game::Game(int width, int height, std::string title) : window(sf::VideoMode(width, height), title)
 {
-	screen = menuScreen.get();
+	screenManager.addScreen("menu", std::unique_ptr<Screen>(new MenuScreen(screenManager)));
 }
 
 void Game::run() {
@@ -15,14 +15,11 @@ void Game::run() {
 				window.close();
 			}
 
-			screen->update(event);
+			screenManager.update(event);
 		}
 
 		window.clear();
-		screen->render(window);
+		screenManager.render(window);
 		window.display();
 	}
-}
-
-Game::~Game() {
 }

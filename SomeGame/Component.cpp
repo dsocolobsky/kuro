@@ -9,6 +9,3 @@ Entity *Component::getParent() {
 		return parent.get();
 	}
 }
-
-Component::~Component() {
-}

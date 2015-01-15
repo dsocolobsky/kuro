@@ -10,7 +10,6 @@ public:
 	Entity *getParent();
 
 	virtual void update() = 0;
-	virtual ~Component();
 private:
 	std::shared_ptr<Entity> parent = nullptr;
 };

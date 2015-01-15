@@ -1,4 +1,5 @@
 #include "Screen.h"
 
-Screen::~Screen() {
+Screen::Screen(ScreenManager &scrManager) : screenManager(scrManager) {
+	
 }
