@@ -5,12 +5,12 @@
 class Component
 {
 public:
-	Component(std::shared_ptr<Entity> parent);
+	Component(Entity &parent);
 
-	Entity *getParent();
+	Entity *parent();
 
 	virtual void update() = 0;
 private:
-	std::shared_ptr<Entity> parent = nullptr;
+	Entity &m_parent;
 };
 

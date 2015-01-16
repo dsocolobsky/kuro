@@ -11,7 +11,7 @@ public:
 
 	void run();
 private:
-	sf::RenderWindow window;
-	ScreenManager screenManager;
+	sf::RenderWindow m_window;
+	ScreenManager    m_screenManager;
 };
 

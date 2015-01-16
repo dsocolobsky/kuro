@@ -1,33 +1,33 @@
 #include "Entity.h"
 
 void Entity::setX(float x) {
-	position.x = x;
+	m_position.x = x;
 }
 
 void Entity::setY(float y) {
-	position.y = y;
+	m_position.y = y;
 }
 
-float Entity::getX() {
-	return position.x;
+float Entity::x() {
+	return m_position.x;
 }
 
-float Entity::getY() {
-	return position.x;
+float Entity::y() {
+	return m_position.x;
 }
 
 void Entity::setWidth(float width) {
-	this->width = width;
+	m_width = width;
 }
 
 void Entity::setHeight(float width) {
-	this->height = width;
+	m_height = width;
 }
 
-float Entity::getWidth() {
-	return width;
+float Entity::width() {
+	return m_width;
 }
 
-float Entity::getHeight() {
-	return height;
+float Entity::height() {
+	return m_height;
 }

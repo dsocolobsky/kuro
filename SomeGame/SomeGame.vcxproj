@@ -92,6 +92,7 @@
     <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="ScreenManager.cpp" />
+    <ClCompile Include="TextureComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
@@ -103,6 +104,7 @@
     <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="ScreenManager.h" />
+    <ClInclude Include="TextureComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

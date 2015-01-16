@@ -8,10 +8,10 @@ public:
 	void setX(short x);
 	void setY(short y);
 
-	short getX();
-	short getY();
+	short x();
+	short y();
 private:
-	short x;
-	short y;
+	short m_x;
+	short m_y;
 };
 

@@ -1,11 +1,8 @@
 #include "Component.h"
 
-Component::Component(std::shared_ptr<Entity> parent) {
-	this->parent = std::move(parent);
+Component::Component(Entity &parent) : m_parent(parent) {
 }
 
-Entity *Component::getParent() {
-	if (this->parent) {
-		return parent.get();
-	}
+Entity *Component::parent() {
+	return &m_parent;
 }

@@ -9,15 +9,15 @@ public:
 
 	void  setX(float x);
 	void  setY(float y);
-	float getX();
-	float getY();
+	float x();
+	float y();
 	void  setWidth(float width);
 	void  setHeight(float height);
-	float getWidth();
-	float getHeight();
+	float width();
+	float height();
 private:
-	sf::Vector2f position;
-	float width  = 0;
-	float height = 0;
+	sf::Vector2f m_position;
+	float        m_width  = 0;
+	float        m_height = 0;
 };
 

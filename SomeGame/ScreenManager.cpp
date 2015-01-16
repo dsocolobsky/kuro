@@ -1,29 +1,29 @@
 #include "ScreenManager.h"
 
-ScreenManager::ScreenManager() : activeScreen(nullptr) {
+ScreenManager::ScreenManager() : m_activeScreen(nullptr) {
 
 }
 
 void ScreenManager::update(sf::Event &event) {
-	if (activeScreen) {
-		activeScreen->update(event);
+	if (m_activeScreen) {
+		m_activeScreen->update(event);
 	}
 }
 
 void ScreenManager::render(sf::RenderWindow &window) {
-	if (activeScreen) {
-		activeScreen->render(window);
+	if (m_activeScreen) {
+		m_activeScreen->render(window);
 	}
 }
 
 void ScreenManager::addScreen(const std::string &id, ScreenPtr screen) {
-	screens[id] = std::move(screen);
+	m_screens[id] = std::move(screen);
 }
 
 void ScreenManager::setActiveScreen(const std::string &id) {
-	auto s = screens.find(id);
+	auto s = m_screens.find(id);
 
-	if (s != screens.end()) {
-		activeScreen = s->second.get();
+	if (s != m_screens.end()) {
+		m_activeScreen = s->second.get();
 	}
 }
