@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
-#include "Entity.h"
+
+class Entity;
 
 class Component
 {

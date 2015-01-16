@@ -1,6 +1,9 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 #include "Component.h"
 #include "Direction.h"
+
+class Entity;
 
 class PhysicsComponent : public Component
 {
