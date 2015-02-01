@@ -3,9 +3,12 @@
 #include "Game.h"
 
 int main(int argc, char *argv[]) {
-	auto game = std::make_unique<Game>(800, 600, "SFML Game");
+	Game::instance().run(1024, 768, "SFML Game");
 
-	game->run();
+	while (Game::instance().isrunning()) {
+		Game::instance().update();
+		Game::instance().render();
+	}
 
 	return 0;
 }

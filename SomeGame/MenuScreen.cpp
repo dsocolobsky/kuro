@@ -1,8 +1,8 @@
 #include "MenuScreen.h"
 
-class ScreenManager;
+class Game;
 
-MenuScreen::MenuScreen(ScreenManager &scrManager) : Screen(scrManager) {
+MenuScreen::MenuScreen(Game &game) : Screen(game) {
 }
 
 void MenuScreen::update(sf::Event &event) {

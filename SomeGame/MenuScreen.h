@@ -4,9 +4,8 @@
 class MenuScreen : public Screen
 {
 public:
-	MenuScreen(ScreenManager &scrManager);
+	MenuScreen(Game &game);
 
 	void update(sf::Event &event);
 	void render(sf::RenderWindow &window);
 };
-

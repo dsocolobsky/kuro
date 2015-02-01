@@ -93,9 +93,7 @@
     <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
-    <ClCompile Include="ScreenManager.cpp" />
     <ClCompile Include="TextureComponent.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
@@ -107,9 +105,7 @@
     <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Screen.h" />
-    <ClInclude Include="ScreenManager.h" />
     <ClInclude Include="TextureComponent.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -1,10 +1,10 @@
 #include "Screen.h"
-#include "ScreenManager.h"
+#include "Game.h"
 
-Screen::Screen(ScreenManager &scrManager) : screenManager(scrManager) {
-	
+Screen::Screen(Game &game) : game(game) {
+
 }
 
 void Screen::setActiveScreen(const std::string &id) {
-	screenManager.setActiveScreen(id);
+	game.setActiveScreen(id);
 }
