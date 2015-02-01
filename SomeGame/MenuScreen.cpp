@@ -1,16 +1,15 @@
 #include "MenuScreen.h"
-
-class Game;
+#include "Game.h"
 
 MenuScreen::MenuScreen(Game &game) : Screen(game) {
 }
 
 void MenuScreen::update(sf::Event &event) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-		setActiveScreen("game");
+		Game::instance().setActiveScreen("game");
 	}
 }
 
 void MenuScreen::render(sf::RenderWindow &window) {
-	window.clear(sf::Color::Blue);
+	window.clear(sf::Color::Blue);	
 }

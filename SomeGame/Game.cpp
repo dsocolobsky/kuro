@@ -15,9 +15,7 @@ Game& Game::instance() {
 
 void Game::run(int width, int height, std::string title) {
 	m_window = std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(width, height), title));
-	//m_window.create(sf::VideoMode(width, height), title);
 
-	
 	addScreen("menu", ScreenPtr(new MenuScreen(*this)));
 	addScreen("game", ScreenPtr(new GameScreen(*this)));
 	setActiveScreen("menu");
@@ -39,18 +37,18 @@ void Game::update() {
 			}
 		}
 
-		m_window->clear();
-		
-		if (m_activeScreen) {
-			m_activeScreen->render(*m_window);
-		}
-
-		m_window->display();
+		render();
 	}
 }
 
 void Game::render() {
+	m_window->clear();
 
+	if (m_activeScreen) {
+		m_activeScreen->render(*m_window);
+	}
+
+	m_window->display();
 }
 
 bool Game::isrunning() {

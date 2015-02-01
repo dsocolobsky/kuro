@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
 
 	while (Game::instance().isrunning()) {
 		Game::instance().update();
-		Game::instance().render();
+		//Game::instance().render();
 	}
 
 	return 0;
