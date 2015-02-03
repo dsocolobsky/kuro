@@ -8,10 +8,8 @@ class Component
 public:
 	Component(Entity &parent);
 
-	Entity *parent();
-
 	virtual void update() = 0;
-private:
+protected:
 	Entity &m_parent;
 };
 

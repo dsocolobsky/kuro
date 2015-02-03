@@ -9,6 +9,7 @@ public:
 
 	void update();
 	void render(sf::RenderWindow &window);
+	void set_texture(sf::Texture);
 private:
 	sf::Texture m_texture;
 	sf::Sprite  m_sprite;

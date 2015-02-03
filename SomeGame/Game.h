@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 #include "ScreenManager.h"
+#include "ResourceHolder.h"
 
 class Game
 {
@@ -17,6 +18,8 @@ public:
 	void setActiveScreen(const std::string &id);
 
 	bool isrunning();
+
+	ResourceHolder<sf::Texture, std::string>& texture_holder();
 private:
 	Game();
 
@@ -26,6 +29,9 @@ private:
 	std::unique_ptr<sf::RenderWindow> m_window;
 	
 	bool m_isrunning;
+
+	void load_resources();
+	ResourceHolder<sf::Texture, std::string> m_texture_holder;
 
 	Game(Game const&)           = delete;
 	void operator=(Game const&) = delete;

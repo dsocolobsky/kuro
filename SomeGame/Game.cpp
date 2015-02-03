@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Assets.h"
 #include "MenuScreen.h"
 #include "GameScreen.h"
 
@@ -14,6 +15,8 @@ Game& Game::instance() {
 }
 
 void Game::run(int width, int height, std::string title) {
+	load_resources();
+
 	m_window = std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(width, height), title));
 
 	addScreen("menu", ScreenPtr(new MenuScreen(*this)));
@@ -65,4 +68,12 @@ void Game::setActiveScreen(const std::string &id) {
 	if (s != m_screens.end()) {
 		m_activeScreen = s->second.get();
 	}
+}
+
+void Game::load_resources() {
+	m_texture_holder.load("player", "Assets/Textures/player.png");
+}
+
+ResourceHolder<sf::Texture, std::string>& Game::texture_holder() {
+	return m_texture_holder;
 }
