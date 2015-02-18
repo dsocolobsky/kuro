@@ -10,11 +10,12 @@ class TextureComponent;
 typedef std::unique_ptr<PhysicsComponent> PhysicsPtr;
 typedef std::unique_ptr<TextureComponent> TexturePtr;
 
+
 class Entity
 {
 public:
-	virtual void update() = 0;
-	virtual void render(sf::RenderWindow &window) = 0;
+	virtual void update(float dt)                     = 0;
+	virtual void render(sf::RenderWindow &window)     = 0;
 
 	void  setX(float x);
 	void  setY(float y);

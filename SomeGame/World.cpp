@@ -1,14 +1,18 @@
 #include "World.h"
 
 World::World() {
-	player.setX(120);
-	player.setY(120);
+	m_player.setX(120);
+	m_player.setY(120);
 }
 
-void World::update() {
-	player.update();
+void World::update(float dt) {
+	m_player.update(dt);
 }
 
 void World::render(sf::RenderWindow &window) {
-	player.render(window);
+	m_player.render(window);
+}
+
+Player& World::player() {
+	return m_player;
 }

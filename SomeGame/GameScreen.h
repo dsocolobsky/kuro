@@ -8,9 +8,10 @@ class GameScreen : public Screen
 public:
 	GameScreen(Game &game);
 	
-	void update(sf::Event &event);
+	void update(float dt);
 	void render(sf::RenderWindow &window);
 private:
 	World world;
+	void handle_input();
 };
 

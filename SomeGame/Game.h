@@ -11,7 +11,7 @@ public:
 	static Game& instance();
 
 	void run(int width, int height, std::string title);
-	void update();
+	void update(float dt);
 	void render();
 
 	void addScreen(const std::string &id, ScreenPtr screen);
@@ -29,6 +29,9 @@ private:
 	std::unique_ptr<sf::RenderWindow> m_window;
 	
 	bool m_isrunning;
+
+	sf::Clock clock;
+	sf::Time deltaTime;
 
 	void load_resources();
 	ResourceHolder<sf::Texture, std::string> m_texture_holder;

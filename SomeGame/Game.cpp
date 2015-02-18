@@ -26,21 +26,17 @@ void Game::run(int width, int height, std::string title) {
 	m_isrunning = true;
 }
 
-void Game::update() {
-	while (m_window->isOpen()) {
-		sf::Event event;
+void Game::update(float dt) {
+	sf::Event event;
 
-		while (m_window->pollEvent(event)) {
-			if (event.type == sf::Event::Closed) {
-				m_window->close();
-			}
-
-			if (m_activeScreen) {
-				m_activeScreen->update(event);
-			}
+	while (m_window->pollEvent(event)) {
+		if (event.type == sf::Event::Closed) {
+			m_window->close();
 		}
 
-		render();
+		if (m_activeScreen) {
+			m_activeScreen->update(dt);
+		}
 	}
 }
 

@@ -13,7 +13,7 @@ float Entity::x() {
 }
 
 float Entity::y() {
-	return m_position.x;
+	return m_position.y;
 }
 
 void Entity::setWidth(float width) {

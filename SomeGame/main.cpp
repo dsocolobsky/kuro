@@ -3,11 +3,21 @@
 #include "Game.h"
 
 int main(int argc, char *argv[]) {
-	Game::instance().run(1024, 768, "SFML Game");
+	const sf::Time FPS = sf::seconds(1.f / 60.f);
+	sf::Clock clock;
+	sf::Time lastUpdate = sf::Time::Zero;
 
+	Game::instance().run(1024, 768, "SFML Game");
 	while (Game::instance().isrunning()) {
-		Game::instance().update();
-		//Game::instance().render();
+		sf::Time elapsed = clock.restart();
+		lastUpdate += elapsed;
+
+		while (lastUpdate > FPS) {
+			lastUpdate -= FPS;
+			Game::instance().update(FPS.asSeconds());
+		}
+
+		Game::instance().render();
 	}
 
 	return 0;

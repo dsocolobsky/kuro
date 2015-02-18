@@ -7,8 +7,6 @@ class Component
 {
 public:
 	Component(Entity &parent);
-
-	virtual void update() = 0;
 protected:
 	Entity &m_parent;
 };

@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Component.h"
-#include "Direction.h"
 
 class Entity;
 
@@ -14,13 +13,14 @@ public:
 	short dx();
 	void setDy(short d);
 	short dy();
-	void setAcceleration(float a);
+
+	float speed();
+	void setSpeed(float s);
 
 	void update();
 private:
-	sf::Vector2f m_velocity;
-	Direction    m_direction;
-	float        m_acceleration;
-	float        m_topSpeed;
+	short m_dx;
+	short m_dy;
+	float m_speed;
 };
 
