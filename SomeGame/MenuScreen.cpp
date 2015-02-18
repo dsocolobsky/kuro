@@ -14,6 +14,6 @@ void MenuScreen::render(sf::RenderWindow &window) {
 
 void MenuScreen::handle_input() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-		Game::instance().setActiveScreen("game");
+		Game::instance().screen_manager().setActiveScreen("game");
 	}
 }

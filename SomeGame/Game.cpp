@@ -19,9 +19,9 @@ void Game::run(int width, int height, std::string title) {
 
 	m_window = std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(width, height), title));
 
-	addScreen("menu", ScreenPtr(new MenuScreen(*this)));
-	addScreen("game", ScreenPtr(new GameScreen(*this)));
-	setActiveScreen("menu");
+	m_scrmanager.addScreen("menu", ScreenPtr(new MenuScreen(*this)));
+	m_scrmanager.addScreen("game", ScreenPtr(new GameScreen(*this)));
+	m_scrmanager.setActiveScreen("menu");
 
 	m_isrunning = true;
 }
@@ -34,18 +34,22 @@ void Game::update(float dt) {
 			m_window->close();
 		}
 
-		if (m_activeScreen) {
-			m_activeScreen->update(dt);
+		if (event.type == sf::Event::KeyPressed) {
+			m_keymap[event.key.code] = true;
+		}
+
+		if (event.type == sf::Event::KeyReleased) {
+			m_keymap[event.key.code] = false;
 		}
 	}
+
+	m_scrmanager.update(dt);
 }
 
 void Game::render() {
 	m_window->clear();
 
-	if (m_activeScreen) {
-		m_activeScreen->render(*m_window);
-	}
+	m_scrmanager.render(*m_window);
 
 	m_window->display();
 }
@@ -54,16 +58,12 @@ bool Game::isrunning() {
 	return m_isrunning;
 }
 
-void Game::addScreen(const std::string &id, ScreenPtr screen) {
-	m_screens[id] = std::move(screen);
+ScreenManager& Game::screen_manager() {
+	return m_scrmanager;
 }
 
-void Game::setActiveScreen(const std::string &id) {
-	auto s = m_screens.find(id);
-
-	if (s != m_screens.end()) {
-		m_activeScreen = s->second.get();
-	}
+bool Game::key_pressed(const sf::Keyboard::Key &key) {
+	return m_keymap[key];
 }
 
 void Game::load_resources() {

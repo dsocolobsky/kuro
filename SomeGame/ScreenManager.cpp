@@ -4,9 +4,9 @@ ScreenManager::ScreenManager() : m_activeScreen(nullptr) {
 
 }
 
-void ScreenManager::update(sf::Event &event) {
+void ScreenManager::update(float dt) {
 	if (m_activeScreen) {
-		m_activeScreen->update(event);
+		m_activeScreen->update(dt);
 	}
 }
 
@@ -26,4 +26,8 @@ void ScreenManager::setActiveScreen(const std::string &id) {
 	if (s != m_screens.end()) {
 		m_activeScreen = s->second.get();
 	}
+}
+
+Screen* ScreenManager::active_screen() {
+	return m_activeScreen;
 }

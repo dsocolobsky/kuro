@@ -14,17 +14,17 @@ public:
 	void update(float dt);
 	void render();
 
-	void addScreen(const std::string &id, ScreenPtr screen);
-	void setActiveScreen(const std::string &id);
+	ScreenManager& screen_manager();
 
 	bool isrunning();
+
+	bool key_pressed(const sf::Keyboard::Key &key);
 
 	ResourceHolder<sf::Texture, std::string>& texture_holder();
 private:
 	Game();
 
-	std::map<std::string, ScreenPtr> m_screens;
-	Screen *m_activeScreen;
+	ScreenManager m_scrmanager;
 
 	std::unique_ptr<sf::RenderWindow> m_window;
 	
@@ -35,6 +35,8 @@ private:
 
 	void load_resources();
 	ResourceHolder<sf::Texture, std::string> m_texture_holder;
+
+	std::map<sf::Keyboard::Key, bool> m_keymap;
 
 	Game(Game const&)           = delete;
 	void operator=(Game const&) = delete;
