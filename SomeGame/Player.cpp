@@ -6,17 +6,32 @@
 using sf::Keyboard;
 
 Player::Player() {
-	m_physics = PhysicsPtr(new PhysicsComponent(*this));
-	m_texture = TexturePtr(new TextureComponent(*this));
+	m_physics   = PhysicsPtr(new PhysicsComponent(*this));
+	m_animation = AnimationPtr(new AnimationComponent(*this));
 	
-
 	setWidth(32);
 	setHeight(32);
 
 	m_physics->setSpeed(200);
 	
 	auto ptx = Game::instance().texture_holder().get("player");
-	m_texture->set_texture(Game::instance().texture_holder().get("player"));
+
+	// I should write a wrapper arround Animation so I can set each animation
+	// frame time accordingly
+
+	m_animation->add_animation("walk_up", ptx);
+	m_animation->animation("walk_up").addFrame(sf::IntRect(0, 0, 32, 32));
+
+	m_animation->add_animation("walk_down", ptx);
+	m_animation->animation("walk_down").addFrame(sf::IntRect(0, 32, 32, 32));
+
+	m_animation->add_animation("walk_left", ptx);
+	m_animation->animation("walk_left").addFrame(sf::IntRect(32, 0, 32, 32));
+
+	m_animation->add_animation("walk_right", ptx);
+	m_animation->animation("walk_right").addFrame(sf::IntRect(32, 32, 32, 32));
+
+	m_animation->set_current_animation("walk_up");
 }
 
 void Player::update(float dt) {
