@@ -1,48 +1,76 @@
-////////////////////////////////////////////////////////////
-//
-// Copyright (C) 2014 Maximilian Wagenbach (aka. Foaly) (foaly.f@web.de)
-//
-// This software is provided 'as-is', without any express or implied warranty.
-// In no event will the authors be held liable for any damages arising from the use of this software.
-//
-// Permission is granted to anyone to use this software for any purpose,
-// including commercial applications, and to alter it and redistribute it freely,
-// subject to the following restrictions:
-//
-// 1. The origin of this software must not be misrepresented;
-// you must not claim that you wrote the original software.
-// If you use this software in a product, an acknowledgment
-// in the product documentation would be appreciated but is not required.
-//
-// 2. Altered source versions must be plainly marked as such,
-// and must not be misrepresented as being the original software.
-//
-// 3. This notice may not be removed or altered from any source distribution.
-//
-////////////////////////////////////////////////////////////
+#include "Animation.h"
+#include "RenderComponent.h"
+#include <SFML/Graphics.hpp>
 
-#include "Animation.hpp"
+Animation::Animation(RenderComponent &parent) : m_parent(parent) {
+	m_frame_index = 0;
+	m_current_time = sf::Time::Zero;
+	m_paused = false;
+}
 
-Animation::Animation() : m_texture(NULL) {
+void Animation::update(float dt) {
+	if (!m_paused && m_frames.size() > 0) {
+		m_current_time += sf::seconds(dt);
+
+		if (m_current_time >= m_frame_time) {
+			m_current_time = sf::microseconds(m_current_time.asMicroseconds() %
+				m_frame_time.asMicroseconds());
+
+			if (m_frame_index + 1 < m_frames.size()) {
+				m_frame_index++;
+			}
+			else {
+				m_frame_index = 0;
+
+				if (!m_looped) {
+					m_paused = true;
+				}
+			}
+
+			m_parent.sprite().setTextureRect(m_frames[m_frame_index]);
+		}
+
+	}
 
 }
 
-void Animation::addFrame(sf::IntRect rect) {
-	m_frames.push_back(rect);
+void Animation::render(sf::RenderWindow &window) {
+	window.draw(m_parent.sprite());
 }
 
-void Animation::setSpriteSheet(const sf::Texture& texture) {
-	m_texture = &texture;
+void Animation::set_texture(sf::Texture *texture) {
+	m_texture = texture;
+	m_parent.sprite().setTexture(*m_texture);
 }
 
-const sf::Texture* Animation::getSpriteSheet() const {
-	return m_texture;
+void Animation::set_frame_time(sf::Time frame_time) {
+	m_frame_time = frame_time;
 }
 
-std::size_t Animation::getSize() const {
-	return m_frames.size();
+void Animation::add_frame(sf::IntRect intrect) {
+	m_frames.push_back(intrect);
+
+	if (m_frames.size() == 1) {
+		m_frame_index = 0;
+	}
 }
 
-const sf::IntRect& Animation::getFrame(std::size_t n) const {
-	return m_frames[n];
+void Animation::play() {
+	m_paused = false;
 }
+
+void Animation::pause() {
+	m_paused = true;
+}
+
+void Animation::reset() {
+	m_frame_index = 0;
+	m_paused = false;
+}
+
+void Animation::stop() {
+	m_frame_index = 0;
+	m_paused = true;
+}
+
+

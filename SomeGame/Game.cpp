@@ -3,6 +3,8 @@
 #include "MenuScreen.h"
 #include "GameScreen.h"
 
+sf::Sprite sprite;
+
 // Private constructor
 Game::Game() {
 	

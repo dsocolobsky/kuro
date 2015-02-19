@@ -7,7 +7,7 @@ using sf::Keyboard;
 
 Player::Player() {
 	m_physics   = PhysicsPtr(new PhysicsComponent(*this));
-	m_animation = AnimationPtr(new AnimationComponent(*this));
+	m_render = RenderPtr(new RenderComponent(*this));
 	
 	setWidth(32);
 	setHeight(32);
@@ -16,22 +16,22 @@ Player::Player() {
 	
 	auto ptx = Game::instance().texture_holder().get("player");
 
-	// I should write a wrapper arround Animation so I can set each animation
-	// frame time accordingly
+	m_render->add_animation("walk_up", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->animation("walk_up")->add_frame(sf::IntRect(0, 0, 32, 32));
+	m_render->animation("walk_up")->add_frame(sf::IntRect(32, 0, 32, 32));
+	m_render->animation("walk_up")->add_frame(sf::IntRect(0, 32, 32, 32));
+	m_render->animation("walk_up")->add_frame(sf::IntRect(32, 32, 32, 32));
 
-	m_animation->add_animation("walk_up", ptx);
-	m_animation->animation("walk_up").addFrame(sf::IntRect(0, 0, 32, 32));
+	/*m_animation->add_animation("walk_down", Game::instance().texture_holder().get("player"), sf::seconds(0.5));
+	m_animation->animation("walk_down").addFrame(sf::IntRect(0, 32, 32, 32)); 
 
-	m_animation->add_animation("walk_down", ptx);
-	m_animation->animation("walk_down").addFrame(sf::IntRect(0, 32, 32, 32));
-
-	m_animation->add_animation("walk_left", ptx);
+	m_animation->add_animation("walk_left", Game::instance().texture_holder().get("player"), sf::seconds(0.5));
 	m_animation->animation("walk_left").addFrame(sf::IntRect(32, 0, 32, 32));
 
-	m_animation->add_animation("walk_right", ptx);
-	m_animation->animation("walk_right").addFrame(sf::IntRect(32, 32, 32, 32));
+	m_animation->add_animation("walk_right", Game::instance().texture_holder().get("player"), sf::seconds(0.5));
+	m_animation->animation("walk_right").addFrame(sf::IntRect(32, 32, 32, 32));*/
 
-	m_animation->set_current_animation("walk_up");
+	m_render->set_current_animation("walk_up");
 }
 
 void Player::update(float dt) {
@@ -44,15 +44,15 @@ void Player::update(float dt) {
 		m_physics->update();
 	}
 
-	if (m_texture) {
-		m_texture->update();
+	if (m_render) {
+		m_render->update(dt);
 	}
 
 }
 
 void Player::render(sf::RenderWindow &window) {
-	if (m_texture) {
-		m_texture->render(window);
+	if (m_render) {
+		m_render->render(window);
 	}
 }
 

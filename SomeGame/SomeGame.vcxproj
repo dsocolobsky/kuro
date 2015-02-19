@@ -54,12 +54,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\lib\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\lib\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -83,9 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -94,15 +94,13 @@
     <ClCompile Include="MenuScreen.cpp" />
     <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RenderComponent.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="ScreenManager.cpp" />
-    <ClCompile Include="TextureComponent.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnimatedSprite.hpp" />
-    <ClInclude Include="Animation.hpp" />
-    <ClInclude Include="AnimationComponent.h" />
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Game.h" />
@@ -111,10 +109,10 @@
     <ClInclude Include="MenuScreen.h" />
     <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RenderComponent.h" />
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="ScreenManager.h" />
-    <ClInclude Include="TextureComponent.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
