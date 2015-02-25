@@ -1,6 +1,8 @@
 #pragma once
 #include "Player.h"
 
+typedef std::unique_ptr<Entity> EntityPtr;
+
 class Level
 {
 public:
@@ -9,8 +11,8 @@ public:
 	void update(float dt);
 	void render(sf::RenderWindow &window);
 
-	Player& player();
+	void add_entity(EntityPtr entity);
 private:
-	Player m_player;
+	std::vector<EntityPtr> entities;
 };
 

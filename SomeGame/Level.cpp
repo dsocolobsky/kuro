@@ -1,18 +1,21 @@
 #include "Level.h"
 
 Level::Level() {
-	m_player.setX(120);
-	m_player.setY(120);
+
 }
 
 void Level::update(float dt) {
-	m_player.update(dt);
+	for (auto &e : entities) {
+		e->update(dt);
+	}
 }
 
 void Level::render(sf::RenderWindow &window) {
-	m_player.render(window);
+	for (auto &e : entities) {
+		e->render(window);
+	}
 }
 
-Player& Level::player() {
-	return m_player;
+void Level::add_entity(EntityPtr entity) {
+	entities.push_back(std::move(entity));
 }
