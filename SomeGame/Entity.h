@@ -2,13 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include "PhysicsComponent.h"
-#include "RenderComponent.h"
+#include "AnimationComponent.h"
 
 class PhysicsComponent;
 class RenderComponent;
 
 typedef std::unique_ptr<PhysicsComponent> PhysicsPtr;
-typedef std::unique_ptr<RenderComponent> RenderPtr;
+typedef std::unique_ptr<AnimationComponent> AnimationPtr;
 
 class Entity
 {
@@ -30,7 +30,7 @@ protected:
 	float        m_width  = 0;
 	float        m_height = 0;
 
-	PhysicsPtr   m_physics   = nullptr;
-	RenderPtr    m_render = nullptr;
+	PhysicsPtr      m_physics   = nullptr;
+	AnimationPtr    m_animation = nullptr;
 };
 
