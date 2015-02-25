@@ -2,13 +2,14 @@
 #include "Game.h"
 #include "Logger.h"
 
-//#define KEY_PRESSED(key) Game::instance().key_pressed(key)
 #define KEY_PRESSED(key) sf::Keyboard::isKeyPressed(key)
+#define PLAYER_TEXTURE Game::instance().texture_holder().get("player")
+
 using sf::Keyboard;
 
 Player::Player() {
-	m_physics   = PhysicsPtr(new PhysicsComponent(*this));
-	m_render = RenderPtr(new RenderComponent(*this));
+	m_physics = PhysicsPtr(new PhysicsComponent(*this));
+	m_render  = RenderPtr(new RenderComponent(*this));
 	
 	setWidth(32);
 	setHeight(32);
@@ -17,17 +18,21 @@ Player::Player() {
 	
 	auto ptx = Game::instance().texture_holder().get("player");
 
-	m_render->add_animation("walk_up", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->add_animation("walk_up", PLAYER_TEXTURE, sf::seconds(0.5), AnimationType::LOOP);
 	m_render->animation("walk_up")->add_frame(sf::IntRect(0, 0, 32, 32));
+	m_render->animation("walk_up")->add_frame(sf::IntRect(32, 0, 32, 32));
 
-	m_render->add_animation("walk_down", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->add_animation("walk_down", PLAYER_TEXTURE, sf::seconds(0.5), AnimationType::LOOP);
 	m_render->animation("walk_down")->add_frame(sf::IntRect(64, 0, 32, 32));
+	m_render->animation("walk_down")->add_frame(sf::IntRect(96, 0, 32, 32));
 
-	m_render->add_animation("walk_left", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->add_animation("walk_left", PLAYER_TEXTURE, sf::seconds(0.5), AnimationType::LOOP);
 	m_render->animation("walk_left")->add_frame(sf::IntRect(0, 32, 32, 32));
+	m_render->animation("walk_left")->add_frame(sf::IntRect(32, 32, 32, 32));
 
-	m_render->add_animation("walk_right", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->add_animation("walk_right", PLAYER_TEXTURE, sf::seconds(0.5), AnimationType::LOOP);
 	m_render->animation("walk_right")->add_frame(sf::IntRect(64, 32, 32, 32));
+	m_render->animation("walk_right")->add_frame(sf::IntRect(96, 32, 32, 32));
 
 	m_render->play_animation("walk_up");
 }
