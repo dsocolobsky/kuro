@@ -1,10 +1,10 @@
 #pragma once
 #include "Player.h"
 
-class World : public Entity
+class Level
 {
 public:
-	World();
+	Level();
 
 	void update(float dt);
 	void render(sf::RenderWindow &window);

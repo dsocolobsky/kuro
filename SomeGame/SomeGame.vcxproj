@@ -97,7 +97,7 @@
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="ScreenManager.cpp" />
-    <ClCompile Include="World.cpp" />
+    <ClCompile Include="Level.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -114,7 +114,7 @@
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="ScreenManager.h" />
-    <ClInclude Include="World.h" />
+    <ClInclude Include="Level.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
