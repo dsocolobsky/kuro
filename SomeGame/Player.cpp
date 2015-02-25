@@ -2,7 +2,8 @@
 #include "Game.h"
 #include "Logger.h"
 
-#define KEY_PRESSED(key) Game::instance().key_pressed(key)
+//#define KEY_PRESSED(key) Game::instance().key_pressed(key)
+#define KEY_PRESSED(key) sf::Keyboard::isKeyPressed(key)
 using sf::Keyboard;
 
 Player::Player() {
@@ -18,20 +19,17 @@ Player::Player() {
 
 	m_render->add_animation("walk_up", Game::instance().texture_holder().get("player"), sf::seconds(1));
 	m_render->animation("walk_up")->add_frame(sf::IntRect(0, 0, 32, 32));
-	m_render->animation("walk_up")->add_frame(sf::IntRect(32, 0, 32, 32));
-	m_render->animation("walk_up")->add_frame(sf::IntRect(0, 32, 32, 32));
-	m_render->animation("walk_up")->add_frame(sf::IntRect(32, 32, 32, 32));
 
-	/*m_animation->add_animation("walk_down", Game::instance().texture_holder().get("player"), sf::seconds(0.5));
-	m_animation->animation("walk_down").addFrame(sf::IntRect(0, 32, 32, 32)); 
+	m_render->add_animation("walk_down", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->animation("walk_down")->add_frame(sf::IntRect(64, 0, 32, 32));
 
-	m_animation->add_animation("walk_left", Game::instance().texture_holder().get("player"), sf::seconds(0.5));
-	m_animation->animation("walk_left").addFrame(sf::IntRect(32, 0, 32, 32));
+	m_render->add_animation("walk_left", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->animation("walk_left")->add_frame(sf::IntRect(0, 32, 32, 32));
 
-	m_animation->add_animation("walk_right", Game::instance().texture_holder().get("player"), sf::seconds(0.5));
-	m_animation->animation("walk_right").addFrame(sf::IntRect(32, 32, 32, 32));*/
+	m_render->add_animation("walk_right", Game::instance().texture_holder().get("player"), sf::seconds(1));
+	m_render->animation("walk_right")->add_frame(sf::IntRect(64, 32, 32, 32));
 
-	m_render->set_current_animation("walk_up");
+	m_render->play_animation("walk_up");
 }
 
 void Player::update(float dt) {
@@ -59,17 +57,33 @@ void Player::render(sf::RenderWindow &window) {
 void Player::handle_input() {
 	if (KEY_PRESSED(Keyboard::W)) {
 		m_physics->setDy(-1);
+
+		if (m_render) {
+			m_render->play_animation("walk_up");
+		}
 	}
 	
 	if (KEY_PRESSED(Keyboard::S)) {
 		m_physics->setDy(1);
+
+		if (m_render) {
+			m_render->play_animation("walk_down");
+		}
 	}
 
 	if (KEY_PRESSED(Keyboard::A)) {
 		m_physics->setDx(-1);
+
+		if (m_render) {
+			m_render->play_animation("walk_left");
+		}
 	}
 	
 	if (KEY_PRESSED(Keyboard::D)) {
 		m_physics->setDx(1);
+
+		if (m_render) {
+			m_render->play_animation("walk_right");
+		}
 	}
 }

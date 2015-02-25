@@ -110,6 +110,7 @@
     <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RenderComponent.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="ScreenManager.h" />
@@ -117,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="kuro.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

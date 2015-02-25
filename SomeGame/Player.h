@@ -9,5 +9,8 @@ public:
 	void update(float dt);
 	void render(sf::RenderWindow &window);
 	void handle_input();
+
+private:
+	bool key_pressed;
 };
 
