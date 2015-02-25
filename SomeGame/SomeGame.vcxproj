@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="kuro.rc" />
