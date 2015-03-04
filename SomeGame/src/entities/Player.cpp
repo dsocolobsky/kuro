@@ -15,8 +15,6 @@ Player::Player() {
 	setHeight(32);
 
 	m_physics->setSpeed(200);
-	
-	auto ptx = Game::instance().texture_holder().get("player");
 
 	m_animation->add_animation("walk_up", PLAYER_TEXTURE, sf::seconds(0.5), AnimationType::LOOP);
 	m_animation->animation("walk_up")->add_frame(sf::IntRect(0, 0, 32, 32));
