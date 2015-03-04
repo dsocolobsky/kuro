@@ -92,6 +92,7 @@
     <ResourceCompile Include="kuro.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
     <ClInclude Include="include\Animation.h" />
     <ClInclude Include="include\Assets.h" />
     <ClInclude Include="include\components\AnimationComponent.h" />
@@ -107,8 +108,10 @@
     <ClInclude Include="include\screens\MenuScreen.h" />
     <ClInclude Include="include\screens\Screen.h" />
     <ClInclude Include="include\screens\ScreenManager.h" />
+    <ClInclude Include="TextureComponent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="src\Animation.cpp" />
     <ClCompile Include="src\components\AnimationComponent.cpp" />
     <ClCompile Include="src\components\Component.cpp" />
@@ -122,6 +125,7 @@
     <ClCompile Include="src\screens\MenuScreen.cpp" />
     <ClCompile Include="src\screens\Screen.cpp" />
     <ClCompile Include="src\screens\ScreenManager.cpp" />
+    <ClCompile Include="TextureComponent.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -40,6 +40,12 @@
     <Filter Include="Source Files\kuro\screens">
       <UniqueIdentifier>{568d76d7-f708-4315-be9b-8182bf2ec09e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\kuro\ui">
+      <UniqueIdentifier>{4c92d791-1c20-4bae-b354-b72bf68b4cb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kuro\ui">
+      <UniqueIdentifier>{736179ee-8495-4598-a0db-fe868435a110}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -96,6 +102,12 @@
     <ClInclude Include="include\entities\Player.h">
       <Filter>Header Files\kuro\entities</Filter>
     </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\kuro\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureComponent.h">
+      <Filter>Header Files\kuro\components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\components\Component.cpp">
@@ -136,6 +148,12 @@
     </ClCompile>
     <ClCompile Include="src\Animation.cpp">
       <Filter>Source Files\kuro</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\kuro\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureComponent.cpp">
+      <Filter>Source Files\kuro\components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
