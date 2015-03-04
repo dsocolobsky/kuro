@@ -1,6 +1,6 @@
-#include "AnimationComponent.h"
-#include "Logger.h"
-#include "Entity.h"
+#include "../../include/components/AnimationComponent.h"
+#include "../../include/Logger.h"
+#include "../../include/entities/Entity.h"
 
 AnimationComponent::AnimationComponent(Entity &parent) : Component(parent) {
 	current_animation = nullptr;

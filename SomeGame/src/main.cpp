@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
-#include "Game.h"
+#include "../include/Game.h"
 
 int main(int argc, char *argv[]) {
 	const sf::Time FPS = sf::seconds(1.f / 60.f);

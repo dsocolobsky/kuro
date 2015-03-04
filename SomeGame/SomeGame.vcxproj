@@ -73,55 +73,55 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\lib\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\lib\zlib;C:\lib\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\lib\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\lib\zlib\contrib\vstudio\vc11\x86\ZlibDllRelease;C:\lib\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;zlibwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameScreen.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MenuScreen.cpp" />
-    <ClCompile Include="PhysicsComponent.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="AnimationComponent.cpp" />
-    <ClCompile Include="Screen.cpp" />
-    <ClCompile Include="ScreenManager.cpp" />
-    <ClCompile Include="Level.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Animation.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameScreen.h" />
-    <ClInclude Include="Logger.h" />
-    <ClInclude Include="MenuScreen.h" />
-    <ClInclude Include="PhysicsComponent.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="AnimationComponent.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="ResourceHolder.h" />
-    <ClInclude Include="Screen.h" />
-    <ClInclude Include="ScreenManager.h" />
-    <ClInclude Include="Level.h" />
-  </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="kuro.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Animation.h" />
+    <ClInclude Include="include\Assets.h" />
+    <ClInclude Include="include\components\AnimationComponent.h" />
+    <ClInclude Include="include\components\Component.h" />
+    <ClInclude Include="include\components\PhysicsComponent.h" />
+    <ClInclude Include="include\entities\Entity.h" />
+    <ClInclude Include="include\entities\Player.h" />
+    <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\Level.h" />
+    <ClInclude Include="include\Logger.h" />
+    <ClInclude Include="include\ResourceHolder.h" />
+    <ClInclude Include="include\screens\GameScreen.h" />
+    <ClInclude Include="include\screens\MenuScreen.h" />
+    <ClInclude Include="include\screens\Screen.h" />
+    <ClInclude Include="include\screens\ScreenManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Animation.cpp" />
+    <ClCompile Include="src\components\AnimationComponent.cpp" />
+    <ClCompile Include="src\components\Component.cpp" />
+    <ClCompile Include="src\components\PhysicsComponent.cpp" />
+    <ClCompile Include="src\entities\Entity.cpp" />
+    <ClCompile Include="src\entities\Player.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Level.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\screens\GameScreen.cpp" />
+    <ClCompile Include="src\screens\MenuScreen.cpp" />
+    <ClCompile Include="src\screens\Screen.cpp" />
+    <ClCompile Include="src\screens\ScreenManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

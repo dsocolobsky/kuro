@@ -1,5 +1,5 @@
-#include "MenuScreen.h"
-#include "Game.h"
+#include "../../include/screens/MenuScreen.h"
+#include "../../include/Game.h"
 
 MenuScreen::MenuScreen(Game &game) : Screen(game) {
 }

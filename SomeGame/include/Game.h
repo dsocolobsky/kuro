@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <map>
-#include "ScreenManager.h"
+#include "screens/ScreenManager.h"
 #include "ResourceHolder.h"
 
 class Game

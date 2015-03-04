@@ -1,7 +1,7 @@
-#include "Game.h"
-#include "Assets.h"
-#include "MenuScreen.h"
-#include "GameScreen.h"
+#include "../include/Game.h"
+#include "../include/Assets.h"
+#include "../include/screens/MenuScreen.h"
+#include "../include/screens/GameScreen.h"
 
 sf::Sprite sprite;
 

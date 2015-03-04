@@ -13,127 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Entities">
-      <UniqueIdentifier>{76b6433f-f7e6-44b2-8ca9-60dd1ead1eb3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\Components">
       <UniqueIdentifier>{72a6c422-2e25-4992-9b55-534153ac32e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Entities">
-      <UniqueIdentifier>{3894388d-94a5-41a3-b54c-2d8b61fec62d}</UniqueIdentifier>
+    <Filter Include="Header Files\kuro">
+      <UniqueIdentifier>{54429550-45cc-48b2-bdda-f54c0b1e6153}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Components">
-      <UniqueIdentifier>{4d947737-80c6-4d27-afa7-715904b219a8}</UniqueIdentifier>
+    <Filter Include="Header Files\kuro\components">
+      <UniqueIdentifier>{300a2db6-53c7-4f9b-873a-d7a5f5aba72f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Components">
-      <UniqueIdentifier>{7af3f474-0145-451b-a75d-c934dc145666}</UniqueIdentifier>
+    <Filter Include="Header Files\kuro\entities">
+      <UniqueIdentifier>{abe43d73-fdd7-42d6-a607-163ff7861d19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Screens">
-      <UniqueIdentifier>{ced226e4-7824-42ec-8ed8-53e063116fca}</UniqueIdentifier>
+    <Filter Include="Header Files\kuro\screens">
+      <UniqueIdentifier>{34cd777d-e98d-41f2-9580-da0f6ed19cb5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Screens">
-      <UniqueIdentifier>{ed286245-73a7-43b1-8732-c4cefc5562d7}</UniqueIdentifier>
+    <Filter Include="Source Files\kuro">
+      <UniqueIdentifier>{576722e9-a994-4090-98de-fb6afc410b60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Util">
-      <UniqueIdentifier>{b9fdb424-a8cd-42bf-983d-e836f63b3f2c}</UniqueIdentifier>
+    <Filter Include="Source Files\kuro\components">
+      <UniqueIdentifier>{3acff8e3-1d85-4319-a9ed-419d508a4a7c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Util">
-      <UniqueIdentifier>{7dc282c6-3748-4156-a7df-741c06a6e4a3}</UniqueIdentifier>
+    <Filter Include="Source Files\kuro\entities">
+      <UniqueIdentifier>{bb215602-4a23-4790-857a-758f6b9c47ea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Lib">
-      <UniqueIdentifier>{6f19e8ab-20fe-4fa9-8a9b-a2538a9e3daa}</UniqueIdentifier>
+    <Filter Include="Source Files\kuro\screens">
+      <UniqueIdentifier>{568d76d7-f708-4315-be9b-8182bf2ec09e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Lib">
-      <UniqueIdentifier>{e7928002-ff77-4ecc-928d-4f763d1be459}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Screen.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuScreen.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="GameScreen.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsComponent.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="ScreenManager.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimationComponent.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuScreen.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="GameScreen.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Header Files\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="ScreenManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceHolder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimationComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -143,5 +49,93 @@
     <ResourceCompile Include="kuro.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Animation.h">
+      <Filter>Header Files\kuro</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Assets.h">
+      <Filter>Header Files\kuro</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game.h">
+      <Filter>Header Files\kuro</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Level.h">
+      <Filter>Header Files\kuro</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Logger.h">
+      <Filter>Header Files\kuro</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ResourceHolder.h">
+      <Filter>Header Files\kuro</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\AnimationComponent.h">
+      <Filter>Header Files\kuro\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\Component.h">
+      <Filter>Header Files\kuro\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\PhysicsComponent.h">
+      <Filter>Header Files\kuro\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\screens\GameScreen.h">
+      <Filter>Header Files\kuro\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="include\screens\MenuScreen.h">
+      <Filter>Header Files\kuro\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="include\screens\Screen.h">
+      <Filter>Header Files\kuro\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="include\screens\ScreenManager.h">
+      <Filter>Header Files\kuro\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\Entity.h">
+      <Filter>Header Files\kuro\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\Player.h">
+      <Filter>Header Files\kuro\entities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\components\Component.cpp">
+      <Filter>Source Files\kuro\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\PhysicsComponent.cpp">
+      <Filter>Source Files\kuro\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\Entity.cpp">
+      <Filter>Source Files\kuro\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\Player.cpp">
+      <Filter>Source Files\kuro\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screens\GameScreen.cpp">
+      <Filter>Source Files\kuro\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screens\MenuScreen.cpp">
+      <Filter>Source Files\kuro\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screens\Screen.cpp">
+      <Filter>Source Files\kuro\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screens\ScreenManager.cpp">
+      <Filter>Source Files\kuro\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files\kuro</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Level.cpp">
+      <Filter>Source Files\kuro</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files\kuro</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\AnimationComponent.cpp">
+      <Filter>Source Files\kuro\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animation.cpp">
+      <Filter>Source Files\kuro</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

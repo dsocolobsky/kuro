@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <memory>
-#include "PhysicsComponent.h"
-#include "AnimationComponent.h"
+#include "../components/PhysicsComponent.h"
+#include "../components/AnimationComponent.h"
 
 class PhysicsComponent;
 class RenderComponent;

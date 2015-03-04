@@ -1,4 +1,4 @@
-#include "PhysicsComponent.h"
+#include "../../include/components/PhysicsComponent.h"
 
 PhysicsComponent::PhysicsComponent(Entity &parent) : Component(parent), m_dx(0), m_dy(0), m_speed(0) {
 }

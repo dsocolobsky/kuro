@@ -1,5 +1,5 @@
-#include "Animation.h"
-#include "Logger.h"
+#include "../include/Animation.h"
+#include "../include/Logger.h"
 
 Animation::Animation(sf::Texture &texture) : texture(texture) {
 	frame_index = 0;

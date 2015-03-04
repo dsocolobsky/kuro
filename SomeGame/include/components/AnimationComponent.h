@@ -3,7 +3,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "Component.h"
-#include "Animation.h"
+#include "../Animation.h"
 
 class AnimationComponent : public Component
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "Player.h"
+#include "entities/Player.h"
 
 typedef std::unique_ptr<Entity> EntityPtr;
 

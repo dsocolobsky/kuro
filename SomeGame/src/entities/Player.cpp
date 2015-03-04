@@ -1,6 +1,6 @@
-#include "Player.h"
-#include "Game.h"
-#include "Logger.h"
+#include "../../include/entities/Player.h"
+#include "../../include/Game.h"
+#include "../../include/Logger.h"
 
 #define KEY_PRESSED(key) sf::Keyboard::isKeyPressed(key)
 #define PLAYER_TEXTURE Game::instance().texture_holder().get("player")

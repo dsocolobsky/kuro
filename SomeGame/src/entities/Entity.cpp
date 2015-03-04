@@ -1,4 +1,4 @@
-#include "Entity.h"
+#include "../../include/entities/Entity.h"
 
 void Entity::setX(float x) {
 	m_position.x = x;

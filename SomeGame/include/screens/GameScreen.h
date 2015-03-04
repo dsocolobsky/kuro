@@ -1,6 +1,6 @@
 #pragma once
 #include "Screen.h"
-#include "Game.h"
+#include "../../include/Game.h"
 
 class GameScreen : public Screen
 {
